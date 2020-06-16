@@ -4,7 +4,7 @@
 		<layer id="0" name="data" precision="FP32" type="Input">
 			<output>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>224</dim>
 					<dim>224</dim>
@@ -15,7 +15,7 @@
 			<data dilations="1,1" group="1" kernel="7,7" output="96" pads_begin="1,1" pads_end="1,1" strides="2,2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>224</dim>
 					<dim>224</dim>
@@ -23,7 +23,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>96</dim>
 					<dim>110</dim>
 					<dim>110</dim>
@@ -37,7 +37,7 @@
 		<layer id="2" name="relu_conv1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>96</dim>
 					<dim>110</dim>
 					<dim>110</dim>
@@ -45,7 +45,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>96</dim>
 					<dim>110</dim>
 					<dim>110</dim>
@@ -56,7 +56,7 @@
 			<data exclude-pad="true" kernel="3,3" pads_begin="0,0" pads_end="0,0" pool-method="max" rounding_type="ceil" strides="2,2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>96</dim>
 					<dim>110</dim>
 					<dim>110</dim>
@@ -64,7 +64,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>96</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -75,7 +75,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="16" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>96</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -83,7 +83,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -97,7 +97,7 @@
 		<layer id="5" name="fire2/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -105,7 +105,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -116,7 +116,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -124,7 +124,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -138,7 +138,7 @@
 		<layer id="7" name="fire2/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -146,7 +146,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -157,7 +157,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="64" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -165,7 +165,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -179,7 +179,7 @@
 		<layer id="9" name="fire2/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -187,7 +187,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -198,13 +198,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -212,7 +212,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -223,7 +223,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="16" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -231,7 +231,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -245,7 +245,7 @@
 		<layer id="12" name="fire3/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -253,7 +253,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -264,7 +264,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -272,7 +272,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -286,7 +286,7 @@
 		<layer id="14" name="fire3/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -294,7 +294,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -305,7 +305,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="64" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>16</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -313,7 +313,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -327,7 +327,7 @@
 		<layer id="16" name="fire3/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -335,7 +335,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -346,13 +346,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -360,7 +360,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -371,7 +371,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="32" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -379,7 +379,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -393,7 +393,7 @@
 		<layer id="19" name="fire4/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -401,7 +401,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -412,7 +412,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="128" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -420,7 +420,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -434,7 +434,7 @@
 		<layer id="21" name="fire4/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -442,7 +442,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -453,7 +453,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="128" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -461,7 +461,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -475,7 +475,7 @@
 		<layer id="23" name="fire4/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -483,7 +483,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -494,13 +494,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -508,7 +508,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -519,7 +519,7 @@
 			<data exclude-pad="true" kernel="3,3" pads_begin="0,0" pads_end="0,0" pool-method="max" rounding_type="ceil" strides="2,2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>55</dim>
 					<dim>55</dim>
@@ -527,7 +527,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -538,7 +538,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="32" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -546,7 +546,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -560,7 +560,7 @@
 		<layer id="27" name="fire5/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -568,7 +568,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -579,7 +579,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="128" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -587,7 +587,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -601,7 +601,7 @@
 		<layer id="29" name="fire5/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -609,7 +609,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -620,7 +620,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="128" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>32</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -628,7 +628,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -642,7 +642,7 @@
 		<layer id="31" name="fire5/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -650,7 +650,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -661,13 +661,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -675,7 +675,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -686,7 +686,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="48" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -694,7 +694,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -708,7 +708,7 @@
 		<layer id="34" name="fire6/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -716,7 +716,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -727,7 +727,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="192" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -735,7 +735,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -749,7 +749,7 @@
 		<layer id="36" name="fire6/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -757,7 +757,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -768,7 +768,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="192" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -776,7 +776,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -790,7 +790,7 @@
 		<layer id="38" name="fire6/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -798,7 +798,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -809,13 +809,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -823,7 +823,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>384</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -834,7 +834,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="48" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>384</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -842,7 +842,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -856,7 +856,7 @@
 		<layer id="41" name="fire7/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -864,7 +864,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -875,7 +875,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="192" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -883,7 +883,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -897,7 +897,7 @@
 		<layer id="43" name="fire7/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -905,7 +905,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -916,7 +916,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="192" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>48</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -924,7 +924,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -938,7 +938,7 @@
 		<layer id="45" name="fire7/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -946,7 +946,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -957,13 +957,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>192</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -971,7 +971,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>384</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -982,7 +982,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>384</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -990,7 +990,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1004,7 +1004,7 @@
 		<layer id="48" name="fire8/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1012,7 +1012,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1023,7 +1023,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="256" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1031,7 +1031,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1045,7 +1045,7 @@
 		<layer id="50" name="fire8/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1053,7 +1053,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1064,7 +1064,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="256" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1072,7 +1072,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1086,7 +1086,7 @@
 		<layer id="52" name="fire8/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1094,7 +1094,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1105,13 +1105,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1119,7 +1119,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1130,7 +1130,7 @@
 			<data alpha="9.999999747378752e-05" beta="0.75" local-size="5" region="across"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1138,7 +1138,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1149,7 +1149,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="24" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1157,7 +1157,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1172,7 +1172,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1180,7 +1180,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 					<dim>24</dim>
@@ -1191,7 +1191,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 					<dim>24</dim>
@@ -1199,7 +1199,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>17496</dim>
 				</port>
 			</output>
@@ -1208,7 +1208,7 @@
 			<data exclude-pad="true" kernel="3,3" pads_begin="0,0" pads_end="0,0" pool-method="max" rounding_type="ceil" strides="2,2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -1216,7 +1216,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1227,7 +1227,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1235,7 +1235,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1249,7 +1249,7 @@
 		<layer id="60" name="fire9/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1257,7 +1257,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1268,7 +1268,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="256" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1276,7 +1276,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1290,7 +1290,7 @@
 		<layer id="62" name="fire9/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1298,7 +1298,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1309,7 +1309,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="256" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1317,7 +1317,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1331,7 +1331,7 @@
 		<layer id="64" name="fire9/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1339,7 +1339,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1350,13 +1350,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1364,7 +1364,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1375,7 +1375,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="128" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1383,7 +1383,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1397,7 +1397,7 @@
 		<layer id="67" name="fire10/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1405,7 +1405,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1416,7 +1416,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="256" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1424,7 +1424,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1438,7 +1438,7 @@
 		<layer id="69" name="fire10/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1446,7 +1446,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1457,7 +1457,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="256" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1465,7 +1465,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1479,7 +1479,7 @@
 		<layer id="71" name="fire10/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1487,7 +1487,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1498,13 +1498,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1512,7 +1512,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1523,7 +1523,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="24" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1531,7 +1531,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1546,7 +1546,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1554,7 +1554,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
 					<dim>24</dim>
@@ -1565,7 +1565,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
 					<dim>24</dim>
@@ -1573,7 +1573,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>4056</dim>
 				</port>
 			</output>
@@ -1582,7 +1582,7 @@
 			<data exclude-pad="true" kernel="3,3" pads_begin="1,1" pads_end="1,1" pool-method="max" rounding_type="ceil" strides="2,2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -1590,7 +1590,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1601,7 +1601,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1609,7 +1609,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1623,7 +1623,7 @@
 		<layer id="78" name="fire11/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1631,7 +1631,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1642,7 +1642,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="256" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1650,7 +1650,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1664,7 +1664,7 @@
 		<layer id="80" name="fire11/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1672,7 +1672,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1683,7 +1683,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="256" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1691,7 +1691,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1705,7 +1705,7 @@
 		<layer id="82" name="fire11/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1713,7 +1713,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1724,13 +1724,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1738,7 +1738,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1749,7 +1749,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1757,7 +1757,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1771,7 +1771,7 @@
 		<layer id="85" name="fire12/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1779,7 +1779,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1790,7 +1790,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="256" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1798,7 +1798,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1812,7 +1812,7 @@
 		<layer id="87" name="fire12/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1820,7 +1820,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1831,7 +1831,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="256" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1839,7 +1839,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1853,7 +1853,7 @@
 		<layer id="89" name="fire12/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1861,7 +1861,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1872,13 +1872,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1886,7 +1886,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1897,7 +1897,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="24" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1905,7 +1905,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1920,7 +1920,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1928,7 +1928,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
 					<dim>24</dim>
@@ -1939,7 +1939,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
 					<dim>24</dim>
@@ -1947,7 +1947,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1176</dim>
 				</port>
 			</output>
@@ -1956,7 +1956,7 @@
 			<data exclude-pad="true" kernel="3,3" pads_begin="0,0" pads_end="0,0" pool-method="max" rounding_type="ceil" strides="2,2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -1964,7 +1964,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -1975,7 +1975,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -1983,7 +1983,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -1997,7 +1997,7 @@
 		<layer id="96" name="fire13/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2005,7 +2005,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2016,7 +2016,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="256" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2024,7 +2024,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2038,7 +2038,7 @@
 		<layer id="98" name="fire13/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2046,7 +2046,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2057,7 +2057,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="256" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2065,7 +2065,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2079,7 +2079,7 @@
 		<layer id="100" name="fire13/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2087,7 +2087,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2098,13 +2098,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2112,7 +2112,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2123,7 +2123,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2131,7 +2131,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2145,7 +2145,7 @@
 		<layer id="103" name="fire14/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2153,7 +2153,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2164,7 +2164,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="128" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2172,7 +2172,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2186,7 +2186,7 @@
 		<layer id="105" name="fire14/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2194,7 +2194,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2205,7 +2205,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="128" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2213,7 +2213,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2227,7 +2227,7 @@
 		<layer id="107" name="fire14/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2235,7 +2235,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2246,13 +2246,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2260,7 +2260,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2271,7 +2271,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="24" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2279,7 +2279,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2294,7 +2294,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2302,7 +2302,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
 					<dim>24</dim>
@@ -2313,7 +2313,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
 					<dim>24</dim>
@@ -2321,7 +2321,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>216</dim>
 				</port>
 			</output>
@@ -2330,7 +2330,7 @@
 			<data exclude-pad="true" kernel="3,3" pads_begin="0,0" pads_end="0,0" pool-method="max" rounding_type="ceil" strides="2,2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2338,7 +2338,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2349,7 +2349,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2357,7 +2357,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2371,7 +2371,7 @@
 		<layer id="114" name="fire15/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2379,7 +2379,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2390,7 +2390,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="128" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2398,7 +2398,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2412,7 +2412,7 @@
 		<layer id="116" name="fire15/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2420,7 +2420,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2431,7 +2431,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="128" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2439,7 +2439,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2453,7 +2453,7 @@
 		<layer id="118" name="fire15/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2461,7 +2461,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2472,13 +2472,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2486,7 +2486,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2497,7 +2497,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="64" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2505,7 +2505,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2519,7 +2519,7 @@
 		<layer id="121" name="fire16/relu_squeeze1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2527,7 +2527,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2538,7 +2538,7 @@
 			<data dilations="1,1" group="1" kernel="1,1" output="128" pads_begin="0,0" pads_end="0,0" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2546,7 +2546,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2560,7 +2560,7 @@
 		<layer id="123" name="fire16/relu_expand1x1" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2568,7 +2568,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2579,7 +2579,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="128" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2587,7 +2587,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2601,7 +2601,7 @@
 		<layer id="125" name="fire16/relu_expand3x3" precision="FP32" type="ReLU">
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2609,7 +2609,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2620,13 +2620,13 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>128</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2634,7 +2634,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2645,7 +2645,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="24" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2653,7 +2653,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2668,7 +2668,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2676,7 +2676,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
 					<dim>24</dim>
@@ -2687,7 +2687,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
 					<dim>24</dim>
@@ -2695,7 +2695,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 				</port>
 			</output>
@@ -2704,29 +2704,29 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>17496</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>4056</dim>
 				</port>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1176</dim>
 				</port>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>216</dim>
 				</port>
 				<port id="4">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>24</dim>
 				</port>
 			</input>
 			<output>
 				<port id="5">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>22968</dim>
 				</port>
 			</output>
@@ -2735,7 +2735,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="36" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -2743,7 +2743,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -2758,7 +2758,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>27</dim>
 					<dim>27</dim>
@@ -2766,7 +2766,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 					<dim>36</dim>
@@ -2777,7 +2777,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 					<dim>36</dim>
@@ -2785,7 +2785,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>26244</dim>
 				</port>
 			</output>
@@ -2794,7 +2794,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="36" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -2802,7 +2802,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -2817,7 +2817,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>13</dim>
 					<dim>13</dim>
@@ -2825,7 +2825,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
 					<dim>36</dim>
@@ -2836,7 +2836,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>13</dim>
 					<dim>13</dim>
 					<dim>36</dim>
@@ -2844,7 +2844,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>6084</dim>
 				</port>
 			</output>
@@ -2853,7 +2853,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="36" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -2861,7 +2861,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -2876,7 +2876,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>7</dim>
 					<dim>7</dim>
@@ -2884,7 +2884,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
 					<dim>36</dim>
@@ -2895,7 +2895,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>7</dim>
 					<dim>7</dim>
 					<dim>36</dim>
@@ -2903,7 +2903,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1764</dim>
 				</port>
 			</output>
@@ -2912,7 +2912,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="36" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2920,7 +2920,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2935,7 +2935,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>3</dim>
 					<dim>3</dim>
@@ -2943,7 +2943,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
 					<dim>36</dim>
@@ -2954,7 +2954,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>3</dim>
 					<dim>36</dim>
@@ -2962,7 +2962,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>324</dim>
 				</port>
 			</output>
@@ -2971,7 +2971,7 @@
 			<data dilations="1,1" group="1" kernel="3,3" output="36" pads_begin="1,1" pads_end="1,1" strides="1,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2979,7 +2979,7 @@
 			</input>
 			<output>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -2994,7 +2994,7 @@
 			<data order="0,2,3,1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 					<dim>1</dim>
 					<dim>1</dim>
@@ -3002,7 +3002,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
 					<dim>36</dim>
@@ -3013,7 +3013,7 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1</dim>
 					<dim>1</dim>
 					<dim>36</dim>
@@ -3021,7 +3021,7 @@
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 				</port>
 			</output>
@@ -3030,29 +3030,29 @@
 			<data axis="1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>26244</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>6084</dim>
 				</port>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>1764</dim>
 				</port>
 				<port id="3">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>324</dim>
 				</port>
 				<port id="4">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>36</dim>
 				</port>
 			</input>
 			<output>
 				<port id="5">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>34452</dim>
 				</port>
 			</output>
@@ -3071,7 +3071,7 @@
 			<data axis="0" num_axes="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>34452</dim>
 				</port>
 				<port id="1">
@@ -3080,7 +3080,7 @@
 			</input>
 			<output>
 				<port id="2">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>5742</dim>
 					<dim>6</dim>
 				</port>
@@ -3090,14 +3090,14 @@
 			<data axis="2"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>5742</dim>
 					<dim>6</dim>
 				</port>
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>5742</dim>
 					<dim>6</dim>
 				</port>
@@ -3107,14 +3107,14 @@
 			<data axis="1" end_axis="-1"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>5742</dim>
 					<dim>6</dim>
 				</port>
 			</input>
 			<output>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>34452</dim>
 				</port>
 			</output>
@@ -3123,13 +3123,13 @@
 			<data aspect_ratio="2.0,3.0" clip="0" density="" fixed_ratio="" fixed_size="" flip="1" max_size="44.79999923706055" min_size="22.399999618530273" offset="0.5" step="8.0" variance="0.10000000149011612,0.10000000149011612,0.20000000298023224,0.20000000298023224"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>27</dim>
 					<dim>27</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>224</dim>
 					<dim>224</dim>
@@ -3147,13 +3147,13 @@
 			<data aspect_ratio="2.0,3.0" clip="0" density="" fixed_ratio="" fixed_size="" flip="1" max_size="96.31999969482422" min_size="44.79999923706055" offset="0.5" step="16.0" variance="0.10000000149011612,0.10000000149011612,0.20000000298023224,0.20000000298023224"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>13</dim>
 					<dim>13</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>224</dim>
 					<dim>224</dim>
@@ -3171,13 +3171,13 @@
 			<data aspect_ratio="2.0,3.0" clip="0" density="" fixed_ratio="" fixed_size="" flip="1" max_size="147.83999633789062" min_size="96.31999969482422" offset="0.5" step="32.0" variance="0.10000000149011612,0.10000000149011612,0.20000000298023224,0.20000000298023224"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>512</dim>
 					<dim>7</dim>
 					<dim>7</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>224</dim>
 					<dim>224</dim>
@@ -3195,13 +3195,13 @@
 			<data aspect_ratio="2.0,3.0" clip="0" density="" fixed_ratio="" fixed_size="" flip="1" max_size="199.36000061035156" min_size="147.83999633789062" offset="0.5" step="72.0" variance="0.10000000149011612,0.10000000149011612,0.20000000298023224,0.20000000298023224"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>3</dim>
 					<dim>3</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>224</dim>
 					<dim>224</dim>
@@ -3219,13 +3219,13 @@
 			<data aspect_ratio="2.0,3.0" clip="0" density="" fixed_ratio="" fixed_size="" flip="1" max_size="250.8800048828125" min_size="199.36000061035156" offset="0.5" step="224.0" variance="0.10000000149011612,0.10000000149011612,0.20000000298023224,0.20000000298023224"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>256</dim>
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>3</dim>
 					<dim>224</dim>
 					<dim>224</dim>
@@ -3280,11 +3280,11 @@
 			<data background_label_id="0" code_type="caffe.PriorBoxParameter.CENTER_SIZE" confidence_threshold="0.009999999776482582" eta="1.0" input_height="1" input_width="1" keep_top_k="200" nms_threshold="0.44999998807907104" normalized="1" num_classes="6" share_location="1" top_k="400" variance_encoded_in_target="0" visualize="False"/>
 			<input>
 				<port id="0">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>22968</dim>
 				</port>
 				<port id="1">
-					<dim>1</dim>
+					<dim>64</dim>
 					<dim>34452</dim>
 				</port>
 				<port id="2">
@@ -3297,7 +3297,7 @@
 				<port id="3">
 					<dim>1</dim>
 					<dim>1</dim>
-					<dim>200</dim>
+					<dim>12800</dim>
 					<dim>7</dim>
 				</port>
 			</output>
@@ -3499,6 +3499,7 @@
 	<meta_data>
 		<MO_version value="2019.3.0-408-gac8584cb7"/>
 		<cli_parameters>
+			<batch value="64"/>
 			<blobs_as_inputs value="False"/>
 			<caffe_parser_path value="DIR"/>
 			<data_type value="float"/>
@@ -3525,7 +3526,7 @@
 			<silent value="False"/>
 			<steps value="False"/>
 			<version value="False"/>
-			<unset unset_cli_parameters="batch, disable_fusing, disable_gfusing, finegrain_fusing, generate_deprecated_IR_V2, input, input_shape, mean_file, mean_file_offsets, model_name, output, placeholder_shapes, scale"/>
+			<unset unset_cli_parameters="disable_fusing, disable_gfusing, finegrain_fusing, generate_deprecated_IR_V2, input, input_shape, mean_file, mean_file_offsets, model_name, output, placeholder_shapes, scale"/>
 		</cli_parameters>
 	</meta_data>
 </net>
